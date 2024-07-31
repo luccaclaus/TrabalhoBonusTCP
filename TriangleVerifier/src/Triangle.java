@@ -17,15 +17,18 @@ public class Triangle {
         } else {
             System.out.println("Os valores inseridos não formam um triângulo.");
         }
-    };
+    }
 
-    private void triangleType() {
+    private TriangleTypes triangleType() {
         if (ladoA == ladoB && ladoB == ladoC) {
             System.out.println("O triângulo é equilátero.");
+            return TriangleTypes.equilatero;
         } else if (ladoA == ladoB || ladoB == ladoC || ladoC == ladoA) {
             System.out.println("O triângulo é isóceles.");
+            return TriangleTypes.isoceles;
         } else {
             System.out.println("O triângulo é escaleno.");
-        };
+            return TriangleTypes.escaleno;
+        }
     };
 }

@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+enum TriangleTypes {
+    isoceles,
+    escaleno,
+    equilatero
+}
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -13,6 +18,8 @@ public class App {
 
         Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
 
-        triangle.isTriangle();   
+        triangle.isTriangle();
+
+        scn.close();
     }
 }
