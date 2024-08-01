@@ -1,3 +1,4 @@
+
 public class Triangle {
     
     int ladoA;
@@ -10,16 +11,17 @@ public class Triangle {
         this.ladoC = ladoC;
     };
 
-    public void isTriangle() {
+    public boolean isTriangle() {
         if ((ladoA + ladoB > ladoC) && (ladoC + ladoB > ladoA) && (ladoA + ladoC > ladoB)) {
             System.out.println("Os lados inseridos formam um triângulo corretamente.");
-            this.triangleType();
+            return true;
         } else {
             System.out.println("Os valores inseridos não formam um triângulo.");
+            return false;
         }
     }
 
-    private TriangleTypes triangleType() {
+    public TriangleTypes triangleType() {
         if (ladoA == ladoB && ladoB == ladoC) {
             System.out.println("O triângulo é equilátero.");
             return TriangleTypes.equilatero;
