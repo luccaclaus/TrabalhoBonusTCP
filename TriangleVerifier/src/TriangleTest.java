@@ -70,7 +70,7 @@ public class TriangleTest {
     }
 
     @Test
-    public void hasZeroAsSideA() {
+    public void sideAIsZero() {
         int ladoA = 0;
         int ladoB = 2;
         int ladoC = 4;
@@ -83,7 +83,7 @@ public class TriangleTest {
     }
     
     @Test
-    public void hasZeroAsSideB() {
+    public void sideBIsZero() {
         int ladoA = 3;
         int ladoB = 0;
         int ladoC = 4;
@@ -96,10 +96,49 @@ public class TriangleTest {
     }
 
     @Test
-    public void hasZeroAsSideC() {
+    public void sideCIsZero() {
         int ladoA = 3;
         int ladoB = 2;
         int ladoC = 0;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test
+    public void sideACIsZero() {
+        int ladoA = 0;
+        int ladoB = 2;
+        int ladoC = 0;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test
+    public void sideBCIsZero() {
+        int ladoA = 3;
+        int ladoB = 0;
+        int ladoC = 0;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test
+    public void sideABIsZero() {
+        int ladoA = 0;
+        int ladoB = 0;
+        int ladoC = 4;
 
         Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
 
@@ -138,6 +177,58 @@ public class TriangleTest {
     public void sideCIsNegative() {
         int ladoA = 3;
         int ladoB = 2;
+        int ladoC = -4;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test 
+    public void sidesBCNegative() {
+        int ladoA = 3;
+        int ladoB = -2;
+        int ladoC = -4;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test 
+    public void sidesACNegative() {
+        int ladoA = -3;
+        int ladoB = 2;
+        int ladoC = -4;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test 
+    public void sidesABNegative() {
+        int ladoA = -3;
+        int ladoB = -2;
+        int ladoC = 4;
+
+        Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
+
+        boolean result = triangle.isTriangle();
+
+        assertEquals(false, result);
+    }
+
+    @Test 
+    public void allSidesNegative() {
+        int ladoA = -3;
+        int ladoB = -2;
         int ladoC = -4;
 
         Triangle triangle = new Triangle(ladoA, ladoB, ladoC);

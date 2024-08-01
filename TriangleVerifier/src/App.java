@@ -18,7 +18,9 @@ public class App {
 
         Triangle triangle = new Triangle(ladoA, ladoB, ladoC);
 
-        triangle.isTriangle();
+        if (triangle.isTriangle()) {
+            triangle.triangleType();
+        } 
 
         scn.close();
     }
