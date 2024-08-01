@@ -57,7 +57,7 @@ public class TriangleTest {
     }
 
     @Test
-    public void isEscalena() {
+    public void isEscaleno() {
         int ladoA = 3;
         int ladoB = 2;
         int ladoC = 4;
